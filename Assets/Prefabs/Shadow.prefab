@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 4366778251523312676}
   - component: {fileID: 4366778251523312683}
   - component: {fileID: 5590138378039628657}
+  - component: {fileID: 8414749000905214456}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Player
@@ -385,10 +386,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79313728ecb1e944a979f06f64f01452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  checkGround: {fileID: 0}
+  piedraTiles: []
+  hieloTiles: []
+  cristalTiles: []
+  piedraEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  hieloEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  cristalEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  salto: {fileID: 0}
+  dashsound: {fileID: 0}
+  cargar: {fileID: 0}
   runSpeed: 2
   jumpSpeed: 4
   wallSlidiningSpeed: 0.8
-  dashDistance: 1
+  dashForce: 15
+  dashDuration: 0.2
+  dashCooldown: 0.5
   DoubleJumpSpeed: 3.5
   betterJump: 1
   fallMultiplier: 0.3
@@ -397,6 +429,9 @@ MonoBehaviour:
   cooldownDuration: 0.5
   spriteRenderer: {fileID: 4366778251523312679}
   animator: {fileID: 4366778251523312672}
+  wallJumpForceX: 1
+  wallJumpForceY: 1
+  wallJumpDuration: 0.2
 --- !u!114 &5590138378039628657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,3 +445,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4366778251523312672}
+  muerte: {fileID: 0}
+--- !u!114 &8414749000905214456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366778251523312673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73318673261884346becd3841219893e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  checkGround: {fileID: 0}
+  piedraTiles: []
+  hieloTiles: []
+  cristalTiles: []
+  piedraEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  hieloEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  cristalEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  currentTileName: 
+  currentTileTipo: 

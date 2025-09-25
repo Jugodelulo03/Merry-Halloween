@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using FMODUnity; // Importante para usar FMOD
 
 public class Checkpoint : MonoBehaviour
 {
-    public AudioSource check;
+    [SerializeField] private EventReference checkpointSound; // Asigna el evento FMOD desde el inspector
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerRespawn>().ReachedCheckpoint(transform.position.x, transform.position.y);
             GetComponent<Animator>().enabled = true;
-            check.Play();
-        }
 
+            // Reproducir sonido FMOD
+            RuntimeManager.PlayOneShot(checkpointSound, transform.position);
+        }
     }
 }
+

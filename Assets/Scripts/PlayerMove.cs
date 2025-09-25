@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -10,74 +7,76 @@ public class PlayerMove : MonoBehaviour
     public AudioSource dashsound;
     public AudioSource cargar;
 
-    public float runSpeed=2;
+    public float runSpeed = 2;
+    public float jumpSpeed = 3;
+    public float wallSlidiningSpeed = 0.5f;
 
-    public float jumpSpeed=3;
+    bool wallSliding = false;
 
-    public float wallSlidiningSpeed=0.5f;
-
-    bool wallSliding=false;
-
-    public float dashDistance = 1;
-
-    private float steps = 10;
-
-    private float Countsteps = 0;
-
-    private bool isDashing=false;
+    // DASH --------------------
+    public float dashForce = 15f;
+    public float dashDuration = 0.2f;
+    public float dashCooldown = 0.5f;
+    private bool isDashing = false;
+    private bool canDash = true;
 
     public float DoubleJumpSpeed = 3f;
-
     private bool canDoubleJump;
 
     Rigidbody2D rb2D;
 
-    public bool betterJump=false;
+    public bool betterJump = false;
+    public float fallMultiplier = 0.5f;
+    public float lowJumpMultiplier = 1f;
 
-    public float fallMultiplier=0.5f;
+    public float holdDuration = 1.0f;
+    private float holdTime = 0.0f;
 
-    public float lowJumpMultiplier=1f;
-
-    public float holdDuration = 1.0f; // Tiempo necesario para mantener presionada la tecla
-
-    private float holdTime = 0.0f;    // Tiempo acumulado mientras se mantiene presionada la tecla
-
-    public float cooldownDuration = 0.5f;  // Tiempo de espera despu�s de activar el par�metro
-
-    private float cooldownTime = 0.0f;  // Tiempo acumulado durante el cooldown
-
-    private bool isOnCooldown = false;  // Estado de cooldown
+    public float cooldownDuration = 0.5f;
+    private float cooldownTime = 0.0f;
+    private bool isOnCooldown = false;
 
     public SpriteRenderer spriteRenderer;
-
     public Animator animator;
+
+    // 🔑 Fuerzas específicas del wall jump
+    public float wallJumpForceX = 1f;
+    public float wallJumpForceY = 1f;
+    public float wallJumpDuration = 0.2f;
+    private bool isWallJumping = false;
 
     void Start()
     {
-        rb2D= GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         animator.SetBool("DoubleJump", false);
         animator.SetBool("Wall", false);
     }
 
-    void dash()
+    private void WallJump(int direction)
     {
-        if (spriteRenderer.flipX)
-        {
-            animator.Play("Dash");
-            rb2D.MovePosition(rb2D.position + new Vector2(-1, 0.1f) * dashDistance / steps);
-        }
-        else
-        {
-            animator.Play("Dash");
-            rb2D.MovePosition(rb2D.position + new Vector2(1, 0.1f) * dashDistance / steps);
-        }
-        Countsteps++;
+        salto.Play();
+        rb2D.velocity = Vector2.zero; // limpiar velocidad para consistencia
+        rb2D.AddForce(new Vector2(direction * wallJumpForceX, wallJumpForceY), ForceMode2D.Impulse);
+
+        // 🔑 Ajustar orientación del sprite según dirección
+        if (direction == -1)
+            spriteRenderer.flipX = true;  // mirando a la izquierda
+        else if (direction == 1)
+            spriteRenderer.flipX = false; // mirando a la derecha
+
+        isWallJumping = true;
+        Invoke(nameof(EndWallJump), wallJumpDuration);
+    }
+
+    private void EndWallJump()
+    {
+        isWallJumping = false;
     }
 
     private void Update()
     {
-        //JUMP ---------------
-        if (Input.GetKey("space") )
+        // JUMP ---------------
+        if (Input.GetKey("space") && !isDashing)
         {
             if (CheckGround.isGrounded)
             {
@@ -104,7 +103,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-
         if (CheckGround.isGrounded == false)
         {
             animator.SetBool("Jump", true);
@@ -122,14 +120,13 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("Falling", true);
         }
-        else if(rb2D.velocity.y > 0)
+        else if (rb2D.velocity.y > 0)
         {
             animator.SetBool("Falling", false);
         }
 
-        //WALLJUMP ---------------
-
-        if ( !((CheckRightSide.RightWall) || (CheckLeftSide.LeftWall)))
+        // WALL SLIDE ---------------
+        if (!((CheckRightSide.RightWall) || (CheckLeftSide.LeftWall)))
         {
             animator.SetBool("Wall", false);
         }
@@ -159,80 +156,63 @@ public class PlayerMove : MonoBehaviour
                 animator.Play("Wall 0");
             }
 
-
             rb2D.velocity = new Vector2(rb2D.velocity.x, Mathf.Clamp(rb2D.velocity.y, -wallSlidiningSpeed, float.MaxValue));
-            if (Input.GetKey("space") && (Input.GetKey("a")) && (CheckRightSide.RightWall))
-            {
-                salto.Play();
-                rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed*0.7f);
-                rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
-            }
-            else if (Input.GetKey("space") && (Input.GetKey("d")) && (CheckLeftSide.LeftWall))
-            {
-                salto.Play();
-                rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed * 0.7f);
-                rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
-            }
 
+            // 🔑 Aquí aplicamos wall jump
+            if (Input.GetKeyDown(KeyCode.Space) && CheckRightSide.RightWall)
+            {
+                WallJump(-1); // salto hacia la izquierda
+            }
+            else if (Input.GetKeyDown(KeyCode.Space) && CheckLeftSide.LeftWall)
+            {
+                WallJump(1); // salto hacia la derecha
+            }
         }
 
+        // DASH input
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && animator.GetBool("Navidad"))
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     void FixedUpdate()
     {
-        //COOLDOWN CARGAR
-        // Si estamos en cooldown, reducimos el tiempo hasta que pase el cooldown
+        // COOLdown CARGAR
         if (isOnCooldown)
         {
             cooldownTime += Time.deltaTime;
             if (cooldownTime >= cooldownDuration)
             {
                 isOnCooldown = false;
-                cooldownTime = 0.0f;  // Reiniciamos el cooldown
+                cooldownTime = 0.0f;
             }
         }
 
-        //DASH -------------
-        if (isDashing && (Countsteps <= steps))
-        {
-            dash();
-            if (Countsteps == steps)
-            {
-                isDashing = false;
-                Countsteps = 0;
-            }
-        }
+        // 🔑 Si está en wall jump o dash, ignoramos el movimiento lateral normal
+        if (isWallJumping || isDashing) return;
 
-        if (Input.GetKey("left shift") && (animator.GetBool("Navidad")) && (!isOnCooldown))
+        // Movimiento horizontal
+        if (Input.GetKey("d") && (!Input.GetKey("s")))
         {
-            dashsound.Play();
-            Countsteps = 0;
-            isDashing = true;
-            isOnCooldown = true;
-            dash();
-        }
-
-        //Der
-        if (Input.GetKey("d") && (!Input.GetKey("s"))){
             rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
-            spriteRenderer.flipX=false;
+            spriteRenderer.flipX = false;
             animator.SetBool("Run", true);
-
-
         }
-        else if(Input.GetKey("a") && (!Input.GetKey("s")))
-        {//Izq
+        else if (Input.GetKey("a") && (!Input.GetKey("s")))
+        {
             rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
-            spriteRenderer.flipX=true;
+            spriteRenderer.flipX = true;
             animator.SetBool("Run", true);
         }
-        else{//quieto
+        else
+        {
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
             animator.SetBool("Run", false);
 
-            if (Input.GetKey("s") && !isOnCooldown && !(animator.GetBool("Inicio")) )
+            if (Input.GetKey("s") && !isOnCooldown && !(animator.GetBool("Inicio")))
             {
-                holdTime += Time.deltaTime; // Incrementa el tiempo mientras la tecla est� presionada
+                holdTime += Time.deltaTime;
                 animator.SetBool("Loading", true);
                 animator.Play("Loading");
                 if (holdTime >= holdDuration)
@@ -241,15 +221,14 @@ public class PlayerMove : MonoBehaviour
                     if (animator.GetBool("Navidad"))
                     {
                         animator.SetBool("Navidad", false);
-                        isOnCooldown = true;  // Activa el estado de cooldown
-                        //Debug.Log("Cargado");
+                        isOnCooldown = true;
                         animator.Play("Idle");
                         return;
                     }
                     else
                     {
                         animator.SetBool("Navidad", true);
-                        isOnCooldown = true;  // Activa el estado de cooldown
+                        isOnCooldown = true;
                         Debug.Log("Cargado");
                         animator.Play("Idle 0");
                         return;
@@ -258,20 +237,47 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                holdTime = 0.0f; // Reinicia el tiempo acumulado cuando se suelta la tecla
+                holdTime = 0.0f;
                 animator.SetBool("Loading", false);
             }
         }
 
-        if(betterJump){
-            if(rb2D.velocity.y<0){
-                rb2D.velocity += Vector2.up*Physics2D.gravity.y*fallMultiplier*Time.deltaTime;
+        // Mejora de salto
+        if (betterJump)
+        {
+            if (rb2D.velocity.y < 0)
+            {
+                rb2D.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
             }
-            if(rb2D.velocity.y>0 && !Input.GetKey("space")){
-                rb2D.velocity += Vector2.up*Physics2D.gravity.y*lowJumpMultiplier*Time.deltaTime;                
+            if (rb2D.velocity.y > 0 && !Input.GetKey("space"))
+            {
+                rb2D.velocity += Vector2.up * Physics2D.gravity.y * lowJumpMultiplier * Time.deltaTime;
             }
         }
+    }
 
+    // --------------------------
+    // DASH (corutina limpia)
+    // --------------------------
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        dashsound.Play();
+        animator.Play("Dash");
 
+        float originalGravity = rb2D.gravityScale;
+        rb2D.gravityScale = 0;
+
+        float dashDir = spriteRenderer.flipX ? -1f : 1f;
+        rb2D.velocity = new Vector2(dashDir * dashForce, 0f);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        rb2D.gravityScale = originalGravity;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }

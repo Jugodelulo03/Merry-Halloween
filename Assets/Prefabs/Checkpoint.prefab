@@ -125,6 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d673719e3eb68f439ba86b2a412c053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointSound:
+    Guid:
+      Data1: -1511547161
+      Data2: 1242831679
+      Data3: -435674178
+      Data4: -283643931
+    Path: event:/Check point
 --- !u!95 &6295936201239150108
 Animator:
   serializedVersion: 5
