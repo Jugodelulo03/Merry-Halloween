@@ -73,6 +73,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 276
+--- !u!114 &-8511169159067650392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/musica navide\xF1a fondo"
+  m_EditorClassIdentifier: 
+  Path: "event:/musica navide\xF1a fondo"
+  Guid:
+    Data1: -113200963
+    Data2: 1234352010
+    Data3: 107974813
+    Data4: 1861704016
+  Banks:
+  - {fileID: -954648140427303521}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 96104
 --- !u!114 &-8046438563625739124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +119,34 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 1106
+  Exists: 1
+--- !u!114 &-7851413077874861067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Steps/Floor
+  m_EditorClassIdentifier: 
+  Name: Floor
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 1651912057
+    data2: 586601541
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Stone
+  - Cristal
+  - Ice
+  - Metal
   Exists: 1
 --- !u!114 &-7328105911322761346
 MonoBehaviour:
@@ -155,7 +210,7 @@ MonoBehaviour:
   StudioPath: bank:/StepsYEP
   lastModified: 638943558148767897
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6576378827572608928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +239,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1100
+--- !u!114 &-6468860887420483435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Steps
+  m_EditorClassIdentifier: 
+  Path: event:/Steps
+  Guid:
+    Data1: -1113471960
+    Data2: 1256895118
+    Data3: -866202965
+    Data4: -353542512
+  Banks:
+  - {fileID: 496291114442683861}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7851413077874861067}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 276
 --- !u!114 &-6096895072175384275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +304,7 @@ MonoBehaviour:
   StudioPath: bank:/Master
   lastModified: 638943558148340990
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5451228821303521441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +433,24 @@ MonoBehaviour:
   lastModified: 638931424155303631
   FileSizes: []
   Exists: 1
+--- !u!114 &-2535591095905914441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638949525024561500
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2529428081690268547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +496,33 @@ MonoBehaviour:
   lastModified: 638943536119669770
   FileSizes: []
   Exists: 1
+--- !u!114 &-1974893266315704707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Luz de la verdad 3
+  m_EditorClassIdentifier: 
+  Path: event:/Luz de la verdad 3
+  Guid:
+    Data1: -335810346
+    Data2: 1284653252
+    Data3: 1880870071
+    Data4: 1789435766
+  Banks:
+  - {fileID: -515743835391132150}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 859
 --- !u!114 &-1657175920261204682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +561,89 @@ MonoBehaviour:
   - Name: 
     Value: 1030
   Exists: 1
+--- !u!114 &-1439243345407403131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/CambioPoder_H.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/CambioPoder_H.bank
+  Name: CambioPoder_H
+  StudioPath: bank:/CambioPoder_H
+  lastModified: 638949525003313387
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1419183221777812678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/CambioPoder_H.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/CambioPoder_H.bank
+  Name: CambioPoder_H
+  StudioPath: 
+  lastModified: 638949525003313387
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1364847994421663024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CambioPoder_Halloween
+  m_EditorClassIdentifier: 
+  Path: event:/CambioPoder_Halloween
+  Guid:
+    Data1: 317875345
+    Data2: 1113073540
+    Data3: -988405883
+    Data4: 709994820
+  Banks:
+  - {fileID: -1439243345407403131}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 840
+--- !u!114 &-1157318979624756144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638949525024571538
+  FileSizes:
+  - Name: 
+    Value: 1508
+  Exists: 1
 --- !u!114 &-1004683321413320017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +660,60 @@ MonoBehaviour:
   Name: Jump Bank
   StudioPath: bank:/Jump Bank
   lastModified: 638942496971468489
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-983874345010645288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Check point.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Check point.bank
+  Name: Check point
+  StudioPath: bank:/Check point
+  lastModified: 638949525003807287
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-954648140427303521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Fondo.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Fondo.bank
+  Name: Fondo
+  StudioPath: bank:/Fondo
+  lastModified: 638949525023953936
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-686124419021486386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Dash.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Dash.bank
+  Name: Dash
+  StudioPath: bank:/Dash
+  lastModified: 638949525004321033
   FileSizes: []
   Exists: 1
 --- !u!114 &-685594910756802539
@@ -485,6 +750,24 @@ MonoBehaviour:
   Name: Jump Bank
   StudioPath: bank:/Jump Bank
   lastModified: 638931424155180268
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-515743835391132150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Luz_cine.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Luz_cine.bank
+  Name: Luz_cine
+  StudioPath: bank:/Luz_cine
+  lastModified: 638949525024518280
   FileSizes: []
   Exists: 1
 --- !u!114 &-256530747641950253
@@ -617,33 +900,49 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8046438563625739124}
-  - {fileID: 6375633530932186809}
-  - {fileID: 8195244311860126287}
-  - {fileID: -1004683321413320017}
-  - {fileID: -6029429601065261427}
-  - {fileID: -6907871531614772603}
+  - {fileID: -1157318979624756144}
+  - {fileID: -1439243345407403131}
+  - {fileID: -983874345010645288}
+  - {fileID: -686124419021486386}
+  - {fileID: -954648140427303521}
+  - {fileID: 1041684966150773944}
+  - {fileID: -515743835391132150}
+  - {fileID: -2535591095905914441}
+  - {fileID: 3886478903358147410}
+  - {fileID: 496291114442683861}
   EditorEvents:
-  - {fileID: 5982878438396590984}
-  - {fileID: -3551051089006430116}
-  - {fileID: -165117346812662011}
-  - {fileID: 4783655417298630472}
+  - {fileID: -1364847994421663024}
+  - {fileID: 8995751785880746477}
+  - {fileID: 2431902539896560976}
+  - {fileID: -8511169159067650392}
+  - {fileID: 1582448027518029847}
+  - {fileID: -1974893266315704707}
+  - {fileID: 3252548493015619421}
+  - {fileID: -6468860887420483435}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6029429601065261427}
+  - {fileID: -2535591095905914441}
   StringsBanks:
-  - {fileID: -8046438563625739124}
+  - {fileID: -1157318979624756144}
   cacheVersion: 131849
-  cacheTime: 638943558148767897
+  cacheTime: 638949525027825431
   SerializableEventsDict:
-  - key: event:/Check point
+  - key: event:/CambioPoder_Halloween
     index: 0
-  - key: event:/Dash
+  - key: event:/Check point
     index: 1
-  - key: event:/Jump
+  - key: event:/Dash
     index: 2
-  - key: event:/Steps
+  - key: "event:/musica navide\xF1a fondo"
     index: 3
+  - key: event:/Jump
+    index: 4
+  - key: event:/Luz de la verdad 3
+    index: 5
+  - key: event:/Sonido Navidad 1
+    index: 6
+  - key: event:/Steps
+    index: 7
 --- !u!114 &41903972998496900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +961,69 @@ MonoBehaviour:
   lastModified: 638942496971276290
   FileSizes: []
   Exists: 1
+--- !u!114 &496291114442683861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Steps.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Steps.bank
+  Name: Steps
+  StudioPath: bank:/Steps
+  lastModified: 638949525027825431
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1041684966150773944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Jump Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Jump Bank.bank
+  Name: Jump Bank
+  StudioPath: bank:/Jump Bank
+  lastModified: 638949525024136688
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1582448027518029847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/Jump
+  Guid:
+    Data1: -1972034563
+    Data2: 1286644208
+    Data3: 1703079857
+    Data4: 681169581
+  Banks:
+  - {fileID: 1041684966150773944}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 321
 --- !u!114 &1752382748161018213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +1051,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 340
+--- !u!114 &2431902539896560976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dash
+  m_EditorClassIdentifier: 
+  Path: event:/Dash
+  Guid:
+    Data1: -19799590
+    Data2: 1135895571
+    Data3: 523941776
+    Data4: 693405448
+  Banks:
+  - {fileID: -686124419021486386}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 250
 --- !u!114 &2860929704213690257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +1133,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 340
+--- !u!114 &3252548493015619421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sonido Navidad 1
+  m_EditorClassIdentifier: 
+  Path: event:/Sonido Navidad 1
+  Guid:
+    Data1: -75863272
+    Data2: 1168523815
+    Data3: -2109839232
+    Data4: 1478199344
+  Banks:
+  - {fileID: 3886478903358147410}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3436
 --- !u!114 &3493019123448316146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +1187,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1100
+--- !u!114 &3886478903358147410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Sombrero C.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BANKS/Sombrero C.bank
+  Name: Sombrero C
+  StudioPath: bank:/Sombrero C
+  lastModified: 638949525025592308
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3947566054906989032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,7 +1340,7 @@ MonoBehaviour:
   StudioPath: bank:/Check point
   lastModified: 638942496970741095
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &6548476776806822531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,7 +1422,7 @@ MonoBehaviour:
   StudioPath: bank:/Dash
   lastModified: 638942496971276290
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8294035982710637870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,3 +1487,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &8995751785880746477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Check point
+  m_EditorClassIdentifier: 
+  Path: event:/Check point
+  Guid:
+    Data1: -1511547161
+    Data2: 1242831679
+    Data3: -435674178
+    Data4: -283643931
+  Banks:
+  - {fileID: -983874345010645288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100

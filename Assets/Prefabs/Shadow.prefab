@@ -386,35 +386,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79313728ecb1e944a979f06f64f01452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
-  checkGround: {fileID: 0}
-  piedraTiles: []
-  hieloTiles: []
-  cristalTiles: []
-  piedraEvent:
+  saltoEvent:
+    Guid:
+      Data1: -1972034563
+      Data2: 1286644208
+      Data3: 1703079857
+      Data4: 681169581
+    Path: event:/Jump
+  dashEvent:
+    Guid:
+      Data1: -19799590
+      Data2: 1135895571
+      Data3: 523941776
+      Data4: 693405448
+    Path: event:/Dash
+  cargarEvent:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
-  hieloEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  cristalEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  salto: {fileID: 0}
-  dashsound: {fileID: 0}
-  cargar: {fileID: 0}
   runSpeed: 2
   jumpSpeed: 4
   wallSlidiningSpeed: 0.8
@@ -445,7 +437,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4366778251523312672}
-  muerte: {fileID: 0}
+  muerteEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &8414749000905214456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,26 +461,13 @@ MonoBehaviour:
   piedraTiles: []
   hieloTiles: []
   cristalTiles: []
-  piedraEvent:
+  footstepsEvent:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
-  hieloEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  cristalEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+  stepInterval: 0.4
   currentTileName: 
   currentTileTipo: 

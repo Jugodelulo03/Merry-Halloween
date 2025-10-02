@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-
+using FMODUnity; // 👈 para usar FMOD
 
 public class PlayerRespawn : MonoBehaviour
 {
-    private float checkPointPositionX,checkPointPositionY ;
+    private float checkPointPositionX, checkPointPositionY;
 
     public Animator animator;
 
-    public AudioSource muerte;
+    [Header("FMOD Events")]
+    [SerializeField] private EventReference muerteEvent;
+
     void Start()
     {
         /*
-        if (PlayerPrefs.GetFloat("checkPointPositionX")!=0)
+        if (PlayerPrefs.GetFloat("checkPointPositionX") != 0)
         {
-            transform.position = (new Vector2(PlayerPrefs.GetFloat("checkPointPositionX"), PlayerPrefs.GetFloat("checkPointPositionY")));
-        }*/
+            transform.position = (new Vector2(
+                PlayerPrefs.GetFloat("checkPointPositionX"),
+                PlayerPrefs.GetFloat("checkPointPositionY")));
+        }
+        */
     }
 
     public void ReachedCheckpoint(float x, float y)
@@ -37,14 +41,20 @@ public class PlayerRespawn : MonoBehaviour
         {
             animator.Play("Hit");
         }
-        muerte.Play();
+
+        // 👇 Reemplazo de muerte.Play()
+        RuntimeManager.PlayOneShot(muerteEvent, transform.position);
+
         Invoke("ReloadScene", 0.05f);
     }
+
     void ReloadScene()
     {
         float x = PlayerPrefs.GetFloat("checkPointPositionX");
         float y = PlayerPrefs.GetFloat("checkPointPositionY");
+
         transform.position = new Vector2(x, y);
+
         if (animator.GetBool("Navidad"))
         {
             animator.Play("Idle 0");
@@ -53,9 +63,7 @@ public class PlayerRespawn : MonoBehaviour
         {
             animator.Play("Idle");
         }
+
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-
-
 }

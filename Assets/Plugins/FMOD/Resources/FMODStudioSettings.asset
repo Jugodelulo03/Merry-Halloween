@@ -562,10 +562,14 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - CambioPoder_H
   - Check point
   - Dash
+  - Fondo
   - Jump Bank
-  - StepsYEP
+  - Luz_cine
+  - Sombrero C
+  - Steps
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
