@@ -4,7 +4,7 @@
 Demuestra cuál es la mejor celebración mientras corres, saltas y te deslizas por escenarios llenos de trampas y obstáculos temáticos.  
 
 👉 **Juega ahora en itch.io:**  
-[![Play on Itch.io](https://static.itch.io/images/badge-color.svg)](https://multrinity.itch.io/merry-halloween)
+[![Play on Itch.io](https://img.shields.io/badge/Play%20on-Itch.io-red?style=for-the-badge&logo=itch.io)](https://multrinity.itch.io/merry-halloween)
 
 ## 📣 Creado por:
 
