@@ -96,12 +96,12 @@ public class FloorDetector : MonoBehaviour
         else if (System.Array.Exists(hieloTiles, t => t != null && t.name == tileName))
         {
             currentTileTipo = "Hielo";
-            currentFloorValue = 1f;
+            currentFloorValue = 2f;
         }
         else if (System.Array.Exists(cristalTiles, t => t != null && t.name == tileName))
         {
             currentTileTipo = "Cristal";
-            currentFloorValue = 2f;
+            currentFloorValue = 1f;
         }
         else
         {
