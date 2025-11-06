@@ -536,8 +536,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: C:/Merry Haloween/Merry-Halloween/Assets/BANKS
+  sourceProjectPath: Assets/FMOD/5NovEntregaAudiosReunidos.fspro
+  sourceBankPath: Assets/FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
@@ -562,13 +562,13 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - CambioPoder_H
-  - Check point
-  - Dash
-  - Fondo
-  - Jump Bank
-  - Luz_cine
-  - Sombrero C
+  - AccionesJugador
+  - Cinematicas
+  - EfectosNiveles
+  - EfectoVientoCaida
+  - Menu
+  - Muerte
+  - MusicaFondo
   - Steps
   BanksToLoad: []
   LiveUpdatePort: 9264

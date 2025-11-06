@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{246399f3-9e89-42ab-a7a6-af478c515cce}">
+		<property name="name">
+			<value>Trozo de luz</value>
+		</property>
+		<relationship name="folder">
+			<destination>{56c55f75-50e6-4e49-8ddb-d2126e5a1ecc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c86c3cde-5d86-4742-b17a-51ad244b0595}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c86c3cde-5d86-4742-b17a-51ad244b0595}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="velocity">
+			<value>1.1399999856948853</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{c4946ea2-cb38-4029-a5c6-8c919426e45c}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{c4946ea2-cb38-4029-a5c6-8c919426e45c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="amount">
+			<value>100</value>
+		</property>
+	</object>
+</objects>

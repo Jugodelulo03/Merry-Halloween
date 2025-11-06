@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{fd355b90-ba82-4134-b994-c03a513b6ebc}">
+		<property name="name">
+			<value>STEPS SOLOS APARTE</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0e6ed363-cd73-43c1-ae4d-d4ccbd44ce7d}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{2d7569bd-4eb5-4f19-aecb-a4ee8c346267}">
+		<property name="name">
+			<value>Muertes</value>
+		</property>
+		<relationship name="folder">
+			<destination>{56c55f75-50e6-4e49-8ddb-d2126e5a1ecc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{db96c50a-603c-4a79-92ef-50a4b384d9e1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{db96c50a-603c-4a79-92ef-50a4b384d9e1}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="velocity">
+			<value>9</value>
+		</property>
+		<relationship name="automators">
+			<destination>{f6d61086-f27d-4262-bd9d-95afcfa69e34}</destination>
+		</relationship>
+		<relationship name="modulators">
+			<destination>{e703ce79-5b01-43e0-b81d-46488c189322}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{f6d61086-f27d-4262-bd9d-95afcfa69e34}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{e703ce79-5b01-43e0-b81d-46488c189322}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="amount">
+			<value>100</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d26a78d3-cb12-4540-8d69-8ab4cc72e092}">
+		<property name="assetPath">
+			<value>reverse-level-up-05-326133.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3680000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4b68838d-96ba-4536-8c78-f0f83fc3c196}</destination>
+		</relationship>
+	</object>
+</objects>

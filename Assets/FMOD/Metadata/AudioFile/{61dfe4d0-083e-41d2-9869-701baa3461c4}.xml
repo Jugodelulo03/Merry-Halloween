@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{61dfe4d0-083e-41d2-9869-701baa3461c4}">
+		<property name="assetPath">
+			<value>wind-outside-sound-ambient-141989.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>89.077551020408166</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4b68838d-96ba-4536-8c78-f0f83fc3c196}</destination>
+		</relationship>
+	</object>
+</objects>

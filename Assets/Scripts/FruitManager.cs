@@ -1,41 +1,42 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.Audio;
+
 public class FruitManager : MonoBehaviour
 {
-    //public Text levelCleared;
-
     public GameObject transition;
-    private void Update()
+
+    private bool sceneChanging = false; // Evita múltiples llamadas
+
+    void Update()
     {
         AllFruitsCollected();
     }
+
     public void AllFruitsCollected()
     {
-        if (transform.childCount == 0)
+        if (transform.childCount == 0 && !sceneChanging)
         {
-            //levelCleared.gameObject.SetActive(true);
-            transition.SetActive(true);
+            sceneChanging = true;
 
-            Invoke("ChangeScene", 1);
+            // Activar transición visual
+            if (transition != null)
+                transition.SetActive(true);
+
+            // 🔊 Actualizar variable FMOD antes de cambiar de escena
+            if (PauseManager.InstanceExists)
+                PauseManager.Instance.IncrementarNivelFMOD();
+
+            // Cambiar de escena después de una breve pausa
+            Invoke(nameof(ChangeScene), 1f);
         }
     }
 
     public void ChangeScene()
     {
-        if (transition != null)
-        {
-            PlayerPrefs.DeleteKey("checkPointPositionX");
-            PlayerPrefs.DeleteKey("checkPointPositionY");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        
+        PlayerPrefs.DeleteKey("checkPointPositionX");
+        PlayerPrefs.DeleteKey("checkPointPositionY");
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

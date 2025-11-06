@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{e23cae04-bbb4-41dc-89e1-0fc2b07dc318}">
+		<property name="assetPath">
+			<value>musica fondo.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>111.59999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4b68838d-96ba-4536-8c78-f0f83fc3c196}</destination>
+		</relationship>
+	</object>
+</objects>

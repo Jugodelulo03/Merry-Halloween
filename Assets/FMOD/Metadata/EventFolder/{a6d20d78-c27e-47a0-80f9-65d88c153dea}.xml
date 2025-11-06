@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EventFolder" id="{a6d20d78-c27e-47a0-80f9-65d88c153dea}">
+		<property name="name">
+			<value>Puas y doble salto- no se usa</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a9f2e0b9-5cab-4c83-a27e-958311128559}</destination>
+		</relationship>
+	</object>
+</objects>

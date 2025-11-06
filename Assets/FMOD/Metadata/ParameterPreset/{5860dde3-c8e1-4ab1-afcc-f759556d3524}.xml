@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{5860dde3-c8e1-4ab1-afcc-f759556d3524}">
+		<property name="name">
+			<value>FallTime</value>
+		</property>
+		<relationship name="folder">
+			<destination>{56c55f75-50e6-4e49-8ddb-d2126e5a1ecc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b7309f1e-f898-46b8-a625-b8e6bbabab40}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b7309f1e-f898-46b8-a625-b8e6bbabab40}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

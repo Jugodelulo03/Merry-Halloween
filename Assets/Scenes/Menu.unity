@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 419603035}
   - component: {fileID: 419603034}
   - component: {fileID: 419603033}
+  - component: {fileID: 419603036}
   - component: {fileID: 419603032}
   m_Layer: 5
   m_Name: Button
@@ -691,6 +692,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2013164699}
+        m_TargetAssemblyTypeName: FMODMusicManager, Assembly-CSharp
+        m_MethodName: AvanzarNivel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &419603034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,6 +742,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419603030}
   m_CullTransparentMesh: 1
+--- !u!114 &419603036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419603030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a550d5cf79d6ca24680590b23f1714cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonEvent:
+    Guid:
+      Data1: 1457582673
+      Data2: 1111482376
+      Data3: 654839959
+      Data4: 1834147400
+    Path: event:/MENU/BotonUI
 --- !u!1 &443138162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,37 +2151,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1540897910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1540897911}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1540897911
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540897910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8445019, y: -0.24906273, z: -0.096623}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553645649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +2162,6 @@ GameObject:
   - component: {fileID: 1553645651}
   - component: {fileID: 1553645650}
   - component: {fileID: 1553645652}
-  - component: {fileID: 1553645653}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -2278,9 +2278,9 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1553645653}
-          m_TargetAssemblyTypeName: FruitManager, Assembly-CSharp
-          m_MethodName: ChangeScene
+        - m_Target: {fileID: 2013164699}
+          m_TargetAssemblyTypeName: FMODMusicManager, Assembly-CSharp
+          m_MethodName: AvanzarEscena
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2290,19 +2290,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1553645653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553645649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4d51af01b22c24c9218d616dcaa6ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 0}
 --- !u!1 &1690167202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,6 +3236,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2013164698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013164700}
+  - component: {fileID: 2013164699}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2013164699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013164698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f6f0e374200ed4bb590c68cb55fb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicaNivelesEvent:
+    Guid:
+      Data1: 1471565867
+      Data2: 1129079782
+      Data3: -1182722922
+      Data4: -300440143
+    Path: event:/MUSICA/MusicaClickJugar
+  variable: Click Jugar
+  nivelActual: 0
+--- !u!4 &2013164700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013164698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2375073, y: 1.1235101, z: 22.578526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047370682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3458,7 @@ GameObject:
   - component: {fileID: 2100688422}
   - component: {fileID: 2100688421}
   - component: {fileID: 2100688420}
+  - component: {fileID: 2100688423}
   - component: {fileID: 2100688419}
   m_Layer: 5
   m_Name: SKIP Button (1)
@@ -3512,9 +3553,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1553645653}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FruitManager, Assembly-CSharp
         m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2013164699}
+        m_TargetAssemblyTypeName: FMODMusicManager, Assembly-CSharp
+        m_MethodName: AvanzarEscena
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3562,3 +3615,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100688417}
   m_CullTransparentMesh: 1
+--- !u!114 &2100688423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100688417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a550d5cf79d6ca24680590b23f1714cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonEvent:
+    Guid:
+      Data1: 1457582673
+      Data2: 1111482376
+      Data3: 654839959
+      Data4: 1834147400
+    Path: event:/MENU/BotonUI

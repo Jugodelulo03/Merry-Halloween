@@ -108,7 +108,7 @@ public class FloorDetector : MonoBehaviour
             currentTileTipo = "Otro";
         }
 
-        Debug.Log($"Tile detectado: {currentTileName} → Tipo: {currentTileTipo}");
+        //Debug.Log($"Tile detectado: {currentTileName} → Tipo: {currentTileTipo}");
     }
 
     private void ReproducirSonido(float floorValue)
