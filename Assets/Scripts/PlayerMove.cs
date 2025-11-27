@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using FMODUnity; // 👈 Necesario para usar FMOD
+using FMODUnity; 
 using FMOD.Studio;
 
 public class PlayerMove : MonoBehaviour
@@ -81,8 +81,19 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        // -----------------------------------------
+        // GET INPUT FROM INPUT MANAGER
+        // -----------------------------------------
+        float move = Input.GetAxisRaw("Horizontal");   // teclado + joystick
+        float vertical = Input.GetAxisRaw("Vertical"); // teclado + joystick
+        bool jumpPressed = Input.GetButton("Jump");    // Space / A button
+        bool jumpDown = Input.GetButtonDown("Jump");   // Space down / A button
+        bool dashDown = Input.GetButtonDown("Fire3");  // Shift / X button
+        bool downHeld = vertical < -0.5f;              // S / stick abajo
+        // -----------------------------------------
+
         // JUMP ---------------
-        if (Input.GetKey("space") && !isDashing)
+        if (jumpPressed && !isDashing)
         {
             if (CheckGround.isGrounded)
             {
@@ -93,7 +104,7 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown("space") && (!animator.GetBool("Wall")))
+                if (jumpDown && (!animator.GetBool("Wall")))
                 {
                     if (canDoubleJump && (!animator.GetBool("Navidad")) && (!animator.GetBool("Inicio")))
                     {
@@ -152,32 +163,22 @@ public class PlayerMove : MonoBehaviour
         if (wallSliding)
         {
             if (animator.GetBool("Inicio"))
-            {
                 animator.Play("Wall 1");
-            }
             else if (!animator.GetBool("Navidad"))
-            {
                 animator.Play("Wall");
-            }
             else
-            {
                 animator.Play("Wall 0");
-            }
 
             rb2D.velocity = new Vector2(rb2D.velocity.x, Mathf.Clamp(rb2D.velocity.y, -wallSlidiningSpeed, float.MaxValue));
 
-            if (Input.GetKeyDown(KeyCode.Space) && CheckRightSide.RightWall)
-            {
+            if (jumpDown && CheckRightSide.RightWall)
                 WallJump(-1);
-            }
-            else if (Input.GetKeyDown(KeyCode.Space) && CheckLeftSide.LeftWall)
-            {
+            else if (jumpDown && CheckLeftSide.LeftWall)
                 WallJump(1);
-            }
         }
 
-        // DASH ---------------
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && animator.GetBool("Navidad"))
+        // DASH (Shift o X button)
+        if (dashDown && canDash && animator.GetBool("Navidad"))
         {
             StartCoroutine(Dash());
         }
@@ -185,6 +186,11 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        // INPUT Manager
+        float move = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        bool downHeld = vertical < -0.5f;
+
         // Cooldown de cargar
         if (isOnCooldown)
         {
@@ -198,14 +204,14 @@ public class PlayerMove : MonoBehaviour
 
         if (isWallJumping || isDashing) return;
 
-        // Movimiento horizontal
-        if (Input.GetKey("d") && (!Input.GetKey("s")))
+        // Movimiento horizontal (TECLADO + MANDO)
+        if (move > 0.1f && !downHeld)
         {
             rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = false;
             animator.SetBool("Run", true);
         }
-        else if (Input.GetKey("a") && (!Input.GetKey("s")))
+        else if (move < -0.1f && !downHeld)
         {
             rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = true;
@@ -216,12 +222,13 @@ public class PlayerMove : MonoBehaviour
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
             animator.SetBool("Run", false);
 
-            // Acción de cargar
-            if (Input.GetKey("s") && !isOnCooldown && !(animator.GetBool("Inicio")))
+            // Acción de cargar (S o stick abajo)
+            if (downHeld && !isOnCooldown && !(animator.GetBool("Inicio")))
             {
                 holdTime += Time.deltaTime;
                 animator.SetBool("Loading", true);
                 animator.Play("Loading");
+
                 if (holdTime >= holdDuration)
                 {
                     RuntimeManager.PlayOneShot(cargarEvent, transform.position);
@@ -237,7 +244,6 @@ public class PlayerMove : MonoBehaviour
                     {
                         animator.SetBool("Navidad", true);
                         isOnCooldown = true;
-                        Debug.Log("Cargado");
                         animator.Play("Idle 0");
                         return;
                     }
@@ -254,13 +260,10 @@ public class PlayerMove : MonoBehaviour
         if (betterJump)
         {
             if (rb2D.velocity.y < 0)
-            {
                 rb2D.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
-            }
-            if (rb2D.velocity.y > 0 && !Input.GetKey("space"))
-            {
+
+            if (rb2D.velocity.y > 0 && !Input.GetButton("Jump"))
                 rb2D.velocity += Vector2.up * Physics2D.gravity.y * lowJumpMultiplier * Time.deltaTime;
-            }
         }
     }
 
@@ -276,7 +279,7 @@ public class PlayerMove : MonoBehaviour
         rb2D.gravityScale = 0;
 
         float dashDir = spriteRenderer.flipX ? -1f : 1f;
-        rb2D.velocity = new Vector2(dashDir * dashForce, dashForce/10);
+        rb2D.velocity = new Vector2(dashDir * dashForce, dashForce / 10);
 
         yield return new WaitForSeconds(dashDuration);
 

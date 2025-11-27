@@ -16,23 +16,22 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenuUI;
 
     [Header("FMOD Events")]
-    [SerializeField] private EventReference musicaNivelesEvent;        // Música de gameplay
-    [SerializeField] private EventReference musicaMenuPausaEvent;     // Música del menú de pausa
-    [SerializeField] private EventReference cerrarMenuPausaEvent;     // Sonido al cerrar el menú
+    [SerializeField] private EventReference musicaNivelesEvent;
+    [SerializeField] private EventReference musicaMenuPausaEvent;
+    [SerializeField] private EventReference cerrarMenuPausaEvent;
 
     private EventInstance musicaNivelesInstance;
     private EventInstance musicaMenuInstance;
 
     private bool musicaGameplayActiva = false;
-    private bool musicaMenuActiva = false;   // ✅ Evita instancias duplicadas
-    private int valorNivel = 1; // Valor inicial del parámetro NIVEL
+    private bool musicaMenuActiva = false;
+    private int valorNivel = 1;
 
     [Header("Escena donde se destruye automáticamente")]
     [SerializeField] private string escenaDestruir = "MenuPrincipal";
 
     void Awake()
     {
-        // Evita duplicados entre escenas
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -42,7 +41,6 @@ public class PauseManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // 👇 Escuchar los cambios de escena
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -56,13 +54,27 @@ public class PauseManager : MonoBehaviour
         musicaNivelesInstance.start();
         musicaGameplayActiva = true;
 
-        // Inicializa el parámetro global NIVEL
+        // Inicializa parámetro global NIVEL
         RuntimeManager.StudioSystem.setParameterByName("NIVEL", valorNivel);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // -----------------------------------------
+        // SISTEMA DE INPUT (TECLADO + GAMEPAD)
+        // -----------------------------------------
+        bool pausePressed = false;
+
+        // Keyboard / Cancel button
+        if (Input.GetButtonDown("Cancel"))
+            pausePressed = true;
+
+        // GAMEPADS Start/Options (muy común)
+        if (Input.GetKeyDown(KeyCode.JoystickButton7)) // Start en Xbox/PlayStation
+            pausePressed = true;
+
+        // Si se presionó pausa
+        if (pausePressed)
         {
             if (GameIsPaused)
                 Resume();
@@ -76,7 +88,6 @@ public class PauseManager : MonoBehaviour
     // ==============================
     public void Pause()
     {
-        // Si ya está pausado o ya está sonando música de menú, no hagas nada
         if (GameIsPaused || musicaMenuActiva)
             return;
 
@@ -85,11 +96,11 @@ public class PauseManager : MonoBehaviour
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(true);
 
-        // Pausar música de gameplay
+        // Pausar música gameplay
         if (musicaGameplayActiva)
             musicaNivelesInstance.setPaused(true);
 
-        // ✅ Solo crear una instancia si no hay una activa
+        // Crear música de menú solo si no existe
         if (!musicaMenuActiva)
         {
             musicaMenuInstance = RuntimeManager.CreateInstance(musicaMenuPausaEvent);
@@ -108,7 +119,7 @@ public class PauseManager : MonoBehaviour
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(false);
 
-        // ✅ Detener música del menú solo si está activa
+        // Detener música menú
         if (musicaMenuActiva)
         {
             musicaMenuInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -116,11 +127,11 @@ public class PauseManager : MonoBehaviour
             musicaMenuActiva = false;
         }
 
-        // Reanudar música de gameplay
+        // Reanudar música gameplay
         if (musicaGameplayActiva)
             musicaNivelesInstance.setPaused(false);
 
-        // Sonido de cierre de menú
+        // Sonido de cierre
         RuntimeManager.PlayOneShot(cerrarMenuPausaEvent, Vector3.zero);
     }
 
@@ -130,7 +141,8 @@ public class PauseManager : MonoBehaviour
     public void IncrementarNivelFMOD()
     {
         valorNivel += 2;
-        if (valorNivel > 9) valorNivel = 9;
+        if (valorNivel > 9)
+            valorNivel = 9;
 
         RuntimeManager.StudioSystem.setParameterByName("NIVEL", valorNivel);
         Debug.Log($"[FMOD] Escena cambiada: parámetro NIVEL = {valorNivel}");
