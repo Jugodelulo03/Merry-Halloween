@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{8e919b9e-e6c8-474f-bf61-8e69c6b901d8}">
+		<property name="assetPath">
+			<value>mystical-chime-196405.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.7200000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4b68838d-96ba-4536-8c78-f0f83fc3c196}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -19,18 +19,6 @@ public class FMODMusicManager : MonoBehaviour
 
     private static FMODMusicManager instance;
 
-    private void Awake()
-    {
-        // ✅ Asegura que solo exista uno entre escenas
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
     void Start()
     {

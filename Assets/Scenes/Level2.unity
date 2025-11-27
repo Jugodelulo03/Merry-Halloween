@@ -3421,7 +3421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6295936201239150096, guid: 9bb1aceb233d55540bfdac961837e88d, type: 3}
       propertyPath: checkpointSound.Path
-      value: event:/Check point
+      value: event:/EFECTOS NIVEL/Check point
       objectReference: {fileID: 0}
     - target: {fileID: 6295936201239150096, guid: 9bb1aceb233d55540bfdac961837e88d, type: 3}
       propertyPath: checkpointSound.Guid.Data1
@@ -20935,7 +20935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312678, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.86
+      value: -0.875
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312678, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23001,7 +23001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495399835093624688, guid: e5e50d8ef39f04740845357d1ca4f25e, type: 3}
       propertyPath: sonidoFMOD.Path
-      value: event:/Luz de la verdad 3
+      value: event:/EFECTOS NIVEL/Luz de la verdad 3
       objectReference: {fileID: 0}
     - target: {fileID: 8495399835093624688, guid: e5e50d8ef39f04740845357d1ca4f25e, type: 3}
       propertyPath: sonidoFMOD.Guid.Data1

@@ -276,7 +276,7 @@ public class PlayerMove : MonoBehaviour
         rb2D.gravityScale = 0;
 
         float dashDir = spriteRenderer.flipX ? -1f : 1f;
-        rb2D.velocity = new Vector2(dashDir * dashForce, 0f);
+        rb2D.velocity = new Vector2(dashDir * dashForce, dashForce/10);
 
         yield return new WaitForSeconds(dashDuration);
 

@@ -621,14 +621,14 @@ MonoBehaviour:
       Data2: 1286644208
       Data3: 1703079857
       Data4: 681169581
-    Path: event:/Jump
+    Path: event:/PODERES/Jump
   dashEvent:
     Guid:
       Data1: -19799590
       Data2: 1135895571
       Data3: 523941776
       Data4: 693405448
-    Path: event:/Dash
+    Path: event:/PODERES/dash
   cargarEvent:
     Guid:
       Data1: 317875345
@@ -707,7 +707,7 @@ MonoBehaviour:
       Data2: 1256895118
       Data3: -866202965
       Data4: -353542512
-    Path: event:/Steps
+    Path: event:/STEPS/Steps
   stepInterval: 0.4
   currentTileName: 
   currentTileTipo: 

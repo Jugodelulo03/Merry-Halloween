@@ -131,7 +131,7 @@ MonoBehaviour:
       Data2: 1242831679
       Data3: -435674178
       Data4: -283643931
-    Path: event:/Check point
+    Path: event:/EFECTOS NIVEL/Check point
 --- !u!95 &6295936201239150108
 Animator:
   serializedVersion: 5

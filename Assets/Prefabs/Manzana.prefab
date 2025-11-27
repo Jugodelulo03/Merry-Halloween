@@ -127,7 +127,7 @@ MonoBehaviour:
       Data2: 1284653252
       Data3: 1880870071
       Data4: 1789435766
-    Path: event:/Luz de la verdad 3
+    Path: event:/EFECTOS NIVEL/Luz de la verdad 3
 --- !u!61 &9068536458338238415
 BoxCollider2D:
   m_ObjectHideFlags: 0
