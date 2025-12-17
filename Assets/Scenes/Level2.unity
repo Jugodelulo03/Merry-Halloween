@@ -20969,6 +20969,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1811016930}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1811016932}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Path
+      value: event:/PODERES/powerup_halloween
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data1
+      value: -1278757117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data2
+      value: 1089322939
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data3
+      value: -1259029587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data4
+      value: -925033021
+      objectReference: {fileID: 0}
     - target: {fileID: 5590138378039628657, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: muerteEvent.Path
       value: event:/no se usa/Puas y doble salto- no se usa/square
@@ -20995,9 +21023,19 @@ PrefabInstance:
       objectReference: {fileID: 884049796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+--- !u!95 &1811016930 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4366778251523312672, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+  m_PrefabInstance: {fileID: 1811016929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1811016931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4366778251523312678, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+  m_PrefabInstance: {fileID: 1811016929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1811016932 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4366778251523312679, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
   m_PrefabInstance: {fileID: 1811016929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1812933318

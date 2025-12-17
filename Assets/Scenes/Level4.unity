@@ -8408,7 +8408,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6713418864179871577, guid: 6baff348b49991742a15b34a8e7fc63d, type: 3}
       propertyPath: m_RootOrder
-      value: 256
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 6713418864179871577, guid: 6baff348b49991742a15b34a8e7fc63d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24396,7 +24396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
       propertyPath: m_RootOrder
-      value: 254
+      value: 253
       objectReference: {fileID: 0}
     - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24712,7 +24712,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8874599853338975011, guid: f554c3c3bda1c3643a54199a7b4ed4d5, type: 3}
       propertyPath: m_RootOrder
-      value: 255
+      value: 254
       objectReference: {fileID: 0}
     - target: {fileID: 8874599853338975011, guid: f554c3c3bda1c3643a54199a7b4ed4d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27411,63 +27411,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1495155075
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 418734636}
-    m_Modifications:
-    - target: {fileID: 5517083854391988177, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_Name
-      value: Spikes (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_RootOrder
-      value: 253
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.02899811
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.951002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517083854391988181, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 69bb5f7ada9c003418a68ef715767d26, type: 3}
 --- !u!1 &1509834028
 GameObject:
   m_ObjectHideFlags: 0
@@ -35104,6 +35047,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2120764213}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2120764222}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: dashsound
       value: 
       objectReference: {fileID: 2120764216}
@@ -35112,12 +35059,36 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 2120764223}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: DoubleJumpSpeed
-      value: 3.5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Path
+      value: event:/PODERES/powerup_halloween
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: wallSlidiningSpeed
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data1
+      value: -1278757117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data2
+      value: 1089322939
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data3
+      value: -1259029587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data4
+      value: -925033021
       objectReference: {fileID: 0}
     - target: {fileID: 5590138378039628657, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: muerte
@@ -35543,6 +35514,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2120764222 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4366778251523312672, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+  m_PrefabInstance: {fileID: 2120764210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2120764223 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4366778251523312679, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+  m_PrefabInstance: {fileID: 2120764210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2122343631
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -303,8 +303,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1920359922}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 37990778}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: runSpeed
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: dashForce
@@ -327,6 +331,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 37990779}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: wallJumpForceX
       value: 2
       objectReference: {fileID: 0}
@@ -336,7 +344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: DoubleJumpSpeed
-      value: 3.5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Path
+      value: event:/PODERES/powerup_halloween
       objectReference: {fileID: 0}
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: cooldownDuration
@@ -349,6 +361,22 @@ PrefabInstance:
     - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: wallSlidiningSpeed
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data1
+      value: -1278757117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data2
+      value: 1089322939
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data3
+      value: -1259029587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366778251523312683, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+      propertyPath: cargarEvent.Guid.Data4
+      value: -925033021
       objectReference: {fileID: 0}
     - target: {fileID: 5590138378039628657, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
       propertyPath: muerte
@@ -380,6 +408,16 @@ PrefabInstance:
       objectReference: {fileID: 884049796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+--- !u!95 &37990778 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4366778251523312672, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+  m_PrefabInstance: {fileID: 37990777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &37990779 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4366778251523312679, guid: d2881b1a77499bc49b576a3b518934e5, type: 3}
+  m_PrefabInstance: {fileID: 37990777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &44914469
 PrefabInstance:
   m_ObjectHideFlags: 0
